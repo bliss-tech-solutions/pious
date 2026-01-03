@@ -1,0 +1,189 @@
+/* ============================================
+   HERO HOME - VIDEO BACKGROUND
+   ============================================ */
+
+#heroHome {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* Loading Preview / Poster with Blur */
+.hero-loading-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: #000;
+    transition: opacity 1s ease-in-out, visibility 1s;
+}
+
+.hero-loading-preview.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.preview-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(15px) brightness(0.7);
+    transform: scale(1.1);
+    /* Prevent white edges from blur */
+}
+
+/* Video Background Wrapper */
+.hero-video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.hero-background-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-background-video.fade-in {
+    opacity: 1;
+}
+
+/* Refined Subtle Vignette Effect - Top & Bottom */
+.hero-video-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Re-enabled sublte shadows */
+    background: radial-gradient(ellipse at center,
+            transparent 60%,
+            rgba(0, 0, 0, 0.05) 85%,
+            rgba(0, 0, 0, 0.15) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Subtler Edge Darkening */
+.hero-video-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Re-enabled sublte gradients */
+    background:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.1) 0%,
+            transparent 10%,
+            transparent 90%,
+            rgba(0, 0, 0, 0.15) 100%),
+        linear-gradient(to right,
+            rgba(0, 0, 0, 0.05) 0%,
+            transparent 10%,
+            transparent 90%,
+            rgba(0, 0, 0, 0.05) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Enhanced Overlay for better text readability */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.2) 0%,
+            transparent 50%,
+            rgba(0, 0, 0, 0.3) 100%);
+    z-index: 1;
+}
+
+/* Volume Toggle Trigger */
+.volume-toggle {
+    position: absolute;
+    left: 30px;
+    /* Shift to left side */
+    bottom: 30px;
+    z-index: 10;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    background: rgba(0, 0, 0, 0.3);
+    /* Darker background to see white icon */
+    backdrop-filter: blur(10px);
+    color: #ffffff;
+    /* Explicitly white icon */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.volume-toggle svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    /* Ensure SVG is visible */
+    fill: currentColor;
+}
+
+.volume-toggle:hover {
+    background: rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+/* Content Wrapper (For potential text/buttons) */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    #heroHome {
+        height: 35vh;
+        /* Maintain full screen height on mobile */
+    }
+
+    .volume-toggle {
+        left: 20px;
+        /* Left side for mobile too */
+        right: auto;
+        bottom: 20px;
+        /* Adjusted from 100px to be closer to bottom but visible */
+    }
+
+    /* Fixed mobile video wrapper positioning */
+    .hero-video-wrapper {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

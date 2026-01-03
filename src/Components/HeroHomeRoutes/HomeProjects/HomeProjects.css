@@ -1,0 +1,286 @@
+/* ============================================
+   HOME PROJECTS SECTION
+   ============================================ */
+
+#homeProjects {
+    background-color: var(--primary-white);
+    padding: var(--spacing-4xl) 0;
+    overflow: hidden;
+}
+
+/* Header Styling */
+.projects-header {
+    margin-bottom: var(--spacing-4xl);
+}
+
+.section-subtitle {
+    display: block;
+    color: var(--primary-brand);
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-md);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: var(--spacing-xl);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-xl);
+}
+
+.section-title {
+    font-size: var(--font-size-5xl);
+    /* Large display size */
+    text-transform: uppercase;
+    color: var(--primary-black);
+    margin: 0;
+    line-height: 1;
+}
+
+.header-description-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
+    max-width: 500px;
+}
+
+.section-description {
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-tertiary);
+}
+
+.projects-arrow-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-brand);
+    transition: transform var(--transition-base);
+}
+
+.projects-arrow-link:hover {
+    transform: translate(4px, -4px);
+}
+
+/* Projects Grid - Staggered Layout */
+.projects-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spacing-lg);
+    position: relative;
+    padding-top: var(--spacing-xl);
+    transition: .5s;
+}
+
+.project-card {
+    flex: 1;
+    position: relative;
+    transition: transform var(--transition-base) ease-out;
+    cursor: pointer;
+    transition: .5s;
+}
+
+/* Staggered offsets for simple uneven look */
+.project-card:nth-child(1) {
+    margin-top: 0;
+}
+
+.project-card:nth-child(2) {
+    margin-top: 80px;
+}
+
+.project-card:nth-child(3) {
+    margin-top: 40px;
+}
+
+.project-card:nth-child(4) {
+    margin-top: 100px;
+}
+
+.project-number {
+    font-family: var(--font-display);
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+}
+
+.project-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/5;
+    /* Portrait orientation */
+    overflow: hidden;
+    /* No border radius as per minimal/reference look, or keep it subtle */
+    background-color: #f0f0f0;
+    transition: .5s;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    filter: grayscale(20%);
+    transition: .5s;
+    /* Slight mute */
+}
+
+.project-tag {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: var(--primary-white);
+    padding: 6px 12px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 2px;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+
+.project-card:hover .project-tag {
+    background: var(--primary-brand);
+    border-color: var(--primary-brand);
+    transform: translateY(-2px);
+}
+
+/* Hover Effects */
+.project-card:hover .project-image {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    transition: .5s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Overlay Title on Hover */
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4) 40%, transparent);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: var(--spacing-sm);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-title {
+    color: var(--primary-white);
+    font-family: var(--font-display);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin: 0;
+}
+
+.project-inquiry-btn {
+    background: var(--primary-brand);
+    color: var(--primary-white);
+    border: none;
+    padding: 8px 16px;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+    pointer-events: auto;
+    /* Ensure it's clickable */
+}
+
+.project-inquiry-btn:hover {
+    background: var(--primary-white);
+    color: var(--primary-brand);
+}
+
+/* Animation Delays */
+.delay-0 {
+    animation-delay: 0.1s;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.3s;
+}
+
+.delay-3 {
+    animation-delay: 0.4s;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .projects-grid {
+        flex-wrap: wrap;
+    }
+
+    .project-card {
+        flex: 1 1 45%;
+        margin-top: 0 !important;
+        /* Reset stagger on tablet */
+    }
+
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: var(--font-size-4xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .project-overlay {
+        opacity: 1;
+        transform: translateY(0);
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+        padding: var(--spacing-md);
+    }
+
+    .project-card {
+        transform: none !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .project-card {
+        flex: 1 1 100%;
+    }
+
+    .section-title {
+        font-size: var(--font-size-3xl);
+    }
+}
