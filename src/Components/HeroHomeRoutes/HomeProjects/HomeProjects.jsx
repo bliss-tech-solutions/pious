@@ -58,7 +58,7 @@ const HomeProjects = () => {
                                             onClick={(e) => {
                                                 e.preventDefault();
                                                 e.stopPropagation();
-                                                const phoneNumber = "+919712574225";
+                                                const phoneNumber = "+917622005373";
                                                 const message = `Hi, I am interested in ${project.projectTitle}.`;
                                                 window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
                                             }}
