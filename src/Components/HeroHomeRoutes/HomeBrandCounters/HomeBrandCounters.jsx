@@ -69,7 +69,7 @@ const HomeBrandCounters = () => {
                             {...fadeIn}
                             transition={{ ...fadeIn.transition, delay: 0.2 }}
                         >
-                            <img src="./Images/PiousHomePageImage.jpeg" alt="Modern Interior" className="featured-image" />
+                            <img src="/Images/ProjectsImages/PiousParivaarProjectImages/PiousParivaarGalleryImage2.jpg" alt="Modern Interior" className="featured-image" />
                         </motion.div>
                         <motion.div
                             className="brand-desc"

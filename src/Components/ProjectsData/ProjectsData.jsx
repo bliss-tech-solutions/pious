@@ -77,7 +77,7 @@ const ProjectsData = [
             "/Images/ProjectsImages/PiousAanganProjectImages/FloorPlanImages/PiousAanganFloorPlanImage1.png",
             "/Images/ProjectsImages/PiousAanganProjectImages/FloorPlanImages/PiousAanganFloorPlanImage2.png",
             "/Images/ProjectsImages/PiousAanganProjectImages/FloorPlanImages/PiousAanganFloorPlanImage3.png",
-            "/Images/ProjectsImages/PiousAanganProjectImages/FloorPlanImages/PiousAanganFloorPlanImage4.png",
+            "/Images/ProjectsImages/PiousAanganProbrand-countersjectImages/FloorPlanImages/PiousAanganFloorPlanImage4.png",
             "/Images/ProjectsImages/PiousAanganProjectImages/FloorPlanImages/PiousAanganFloorPlanImage5.png"
         ],
         projectImage: "/Images/ProjectsImages/PiousAanganProjectImages/PiousAanganGalleryImage2.png",
@@ -111,6 +111,7 @@ const ProjectsData = [
         ],
         elevationImages: [
             "/Images/ProjectRealImages/2.jpeg",
+             "/Images/ProjectRealImages/5.jpeg",
             // "/Images/ProjectsImages/PiousSkyProjectImages/PiousSkyGalleryImage2.png",
             // "/Images/ProjectsImages/PiousSkyProjectImages/PiousSkyGalleryImage3.png",
         ],
@@ -152,9 +153,10 @@ const ProjectsData = [
             // { id: 12, name: "Power backup System" },
         ],
         elevationImages: [
+                        "/Images/ProjectRealImages/6.jpeg",
             "/Images/ProjectRealImages/4.jpeg",
-            "/Images/ProjectRealImages/5.jpeg",
-            "/Images/ProjectRealImages/6.jpeg",
+           
+
 
         ],
         floorPlanImages: [
