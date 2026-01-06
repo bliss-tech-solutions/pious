@@ -81,7 +81,7 @@ const Footer = () => {
                                 </a> */}
                             </div>
                             <div className="footer-copyright">
-                                <p>&copy; 2025 <span style={{ color: "var(--primary-brand)" }}>The Bliss Solution</span>. All Rights Reserved.</p>
+                                <p>&copy; 2026 <span style={{ color: "var(--primary-brand)" }}>The Bliss Solution</span>. All Rights Reserved.</p>
                             </div>
                         </motion.div>
                     </div>

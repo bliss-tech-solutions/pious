@@ -81,6 +81,10 @@
     /* max-width: 800px; */
 }
 
+.brand-description p{
+    text-align: justify;
+}
+
 /* Animation Delays */
 .brand-eyebrow.fade-in-up {
     animation-delay: 0.1s;

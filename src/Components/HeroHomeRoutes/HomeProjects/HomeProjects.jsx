@@ -53,18 +53,20 @@ const HomeProjects = () => {
                                     <img src={project.projectImage} alt={project.projectTitle} className="project-image" />
                                     <div className="project-overlay">
                                         <h3 className="project-title">{project.projectTitle}</h3>
-                                        <button
-                                            className="project-inquiry-btn"
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                e.stopPropagation();
-                                                const phoneNumber = "+917622005373";
-                                                const message = `Hi, I am interested in ${project.projectTitle}.`;
-                                                window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
-                                            }}
-                                        >
-                                            Inquiry
-                                        </button>
+                                        {project.projectStatus === "Ongoing" && (
+                                            <button
+                                                className="project-inquiry-btn"
+                                                onClick={(e) => {
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
+                                                    const phoneNumber = "+917622005373";
+                                                    const message = `Hi, I am interested in ${project.projectTitle}.`;
+                                                    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, "_blank");
+                                                }}
+                                            >
+                                                Inquiry
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
                             </Link>
