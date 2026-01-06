@@ -20,6 +20,10 @@ const Footer = () => {
 
     return (
         <footer className="footer">
+            <div>
+                <h2 className="heading-2 brand-title text-center"><span className="text-highlight">Signature </span>Projects Visuals</h2>
+            </div>
+            <br />
             <div className="footer-grid container">
                 {footerImages.map((src, index) => (
                     <motion.div
